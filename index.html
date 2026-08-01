@@ -3,134 +3,246 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Angellie Jerusalem</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
+<title>Angellie Jerusalem — Digital Business Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  body {
+  *{ box-sizing: border-box; }
+
+  body{
     margin: 0;
-    background-color: #0c0a0a;
-    background-image: radial-gradient(ellipse 700px 500px at 50% 0%, rgba(138,28,48,0.45), transparent 70%);
-    background-repeat: no-repeat;
-    color: #f5f1ea;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-  }
-
-  a {
-    color: #e8b93f;
-  }
-
-  .profile-section {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 40px 20px;
+    justify-content: center;
+    background: #E8D9BE;
+    font-family: 'Inter', sans-serif;
+    padding: 24px;
   }
 
-  .location {
-    font-size: 13px;
-    color: #e8b93f;
-    letter-spacing: 2px;
+  /* Main card container (was: .card) */
+  .business-card{
+    position: relative;
+    width: 100%;
+    max-width: 660px;
+    background:
+      linear-gradient(135deg, #5C0F1C 0%, #38070F 65%, #17080A 100%);
+    border-radius: 16px;
+    padding: 40px 44px 32px;
+    overflow: hidden;
+   box-shadow:
+      0 40px 80px -25px rgba(0,0,0,0.75),
+      0 0 0 1px rgba(217,174,78,0.15);
+  }
+
+  .business-card::before{
+    /* subtle gold hairline frame, inset */
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(217,174,78,0.22);
+    border-radius: 10px;
+    pointer-events: none;
+  }
+
+  /* Header row: institute seal + name on left, role badge on right (was: .top) */
+  .card-header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+
+  /* Institute seal + institute name grouping (was: .top .brand) */
+  .card-header .institute-brand{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* "Aspiring Developer" pill badge (was: .role-badge) */
+  .aspiring-role-badge{
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    color: #D9AE4E;
+    border: 1px solid rgba(217,174,78,0.35);
+    border-radius: 999px;
+    padding: 6px 14px;
+    white-space: nowrap;
   }
 
-  .divider {
-    width: 40px;
-    height: 2px;
-    background-color: #c23a51;
-    margin: 0 auto 20px auto;
-  }
-
-  h1 {
-    font-size: 48px;
-    margin: 0;
-  }
-
-  .position {
-    font-size: 15px;
-    color: #a89b96;
-    margin-top: 15px;
-  }
-
-  .position span {
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    background-color: #c23a51;
+  /* Circular institute logo/seal image (was: .seal) */
+  .institute-seal{
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    margin: 0 6px;
-    vertical-align: middle;
+    object-fit: cover;
+    box-shadow: 0 0 0 2px #D9AE4E, 0 8px 18px rgba(0,0,0,0.5);
   }
 
-  .description {
-    max-width: 500px;
-    color: #a89b96;
-    margin-top: 20px;
-    font-size: 15px;
+  /* "Institute of Computer Studies / Tangub City Global College" text (was: .school-name) */
+  .institute-name{
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #D9AE4E;
+    line-height: 1.5;
   }
 
-  .quote-section {
-    min-height: 100vh;
+  .institute-name .college-name{
+    display: block;
+    color: rgba(251,245,233,0.62);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    font-size: 10px;
+    margin-top: 2px;
+  }
+
+  /* Wraps the year-level label, full name, and location (was: .body-block) */
+  .profile-section{ position: relative; }
+
+  /* Small label above the name, e.g. "BSCS · 3rd Year" (was: .eyebrow) */
+  .year-level-label{
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #D9AE4E;
+    margin: 0 0 14px;
+  }
+
+  /* Full name heading (was: h1, unchanged tag, added class for clarity) */
+  .full-name{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 1.1;
+    color: #FBF5E9;
+    margin: 0 0 12px;
+  }
+
+  /* Row holding the location text (was: .meta-row) */
+  .location-row{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    border-top: 1px solid #8a1c30;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
   }
 
-  .quote-icon {
-    font-size: 60px;
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #c23a51;
-    line-height: 1;
-    margin-bottom: 10px;
+  /* Location text, e.g. "Tangub City, Philippines" (was: .meta) */
+  .location-text{
+    font-size: 14px;
+    color: rgba(251,245,233,0.62);
+    margin: 0;
+    line-height: 1.6;
   }
 
-  .quote-text {
-    font-size: 24px;
-    font-weight: bold;
-    max-width: 400px;
-    line-height: 1.4;
+  /* Thin gold divider line between profile info and contact links (was: .divider) */
+  .gold-divider{
+    height: 1px;
+    background: linear-gradient(90deg, rgba(217,174,78,0.35), rgba(217,174,78,0.02));
+    margin: 28px 0 22px;
+    position: relative;
   }
 
-  .quote-text span {
-    color: #e8b93f;
+  /* Grid holding the email + GitHub links (was: .contact) */
+  .contact-links{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    row-gap: 16px;
+    column-gap: 60px;
   }
 
-  footer {
-    padding: 25px;
-    font-size: 12px;
-    color: #a89b96;
+  .contact-links a{
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    text-decoration: none;
+  }
+
+  /* "Email" / "GitHub" small caption (was: .label) */
+  .contact-links .contact-label{
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgba(251,245,233,0.62);
+  }
+
+  /* Actual email address / GitHub username text (was: .value) */
+  .contact-links .contact-value{
+    font-size: 14px;
+    color: #FBF5E9;
+    border-bottom: 1px solid rgba(251,245,233,0.2);
+    padding-bottom: 1px;
+  }
+
+  .contact-links a:hover .contact-value{
+    color: #D9AE4E;
+    border-color: #D9AE4E;
+  }
+
+  /* "Let's Connect" heading above contact links (was: .connect-label) */
+  .connect-heading{
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #D9AE4E;
+    margin: 0 0 14px;
+  }
+
+  @media (max-width: 560px){
+    .business-card{ padding: 32px 26px 26px; }
+    .full-name{ font-size: 30px; }
+    .contact-links{ grid-template-columns: 1fr; column-gap: 0; row-gap: 14px; }
+    .card-header{ flex-wrap: wrap; }
+    .aspiring-role-badge{ order: 3; margin-top: 8px; }
+    .location-row{ justify-content: flex-start; }
   }
 </style>
 </head>
 <body>
 
-  <div class="profile-section">
-    <div class="location">Tangub City, Philippines</div>
-    <div class="divider"></div>
-    <h1>Angellie Jerusalem</h1>
-    <div class="position">BSCS Student <span></span> Institute of Computer Studies, TCGC</div>
-    <p class="description">
-      I build software — mobile apps, small tools, and whatever a project needs.
-      Always learning, always shipping.
-    </p>
-  </div>
+  <main class="business-card">
+    <div class="card-header">
+      <div class="institute-brand">
+      <img class="institute-seal" src="754462859_122160079664412687_5157639688529994482_n.jpg" alt="BSCS logo">
+      <p class="institute-name">Institute of Computer Studies
+        <span class="college-name">Tangub City Global College</span>
+      </p>
+      </div>
+      <span class="aspiring-role-badge">Aspiring Developer</span>
+    </div>
 
-  <div class="quote-section">
-    <div class="quote-icon">&ldquo;</div>
-    <p class="quote-text">Every line of code is a small decision — I try to <span>make it right</span>, not just make it work.</p>
-  </div>
+    <div class="profile-section">
+      <p class="year-level-label">BSCS · 3rd Year</p>
+      <h1 class="full-name">Angellie Jerusalem</h1>
+      <div class="location-row">
+        <p class="location-text">Tangub City, Philippines</p>
+      </div>
 
-  <footer>
-    Angellie Jerusalem | © 2026
-  </footer>
+      <div class="gold-divider"></div>
+
+      <p class="connect-heading">Let's Connect</p>
+      <nav class="contact-links">
+        <a href="mailto:angelliejerusalem.08@gmail.com">
+          <span class="contact-label">Email</span><span class="contact-value">angelliejerusalem.08@gmail.com</span>
+        </a>
+        <a href="https://github.com/angellie-jerusalem" target="_blank" rel="noopener">
+          <span class="contact-label">GitHub</span><span class="contact-value">angellie-jerusalem</span>
+        </a>
+      </nav>
+    </div>
+  </main>
 
 </body>
 </html>
