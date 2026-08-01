@@ -9,18 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,300&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-  :root{
-    --maroon-deep: #5C0F1C;
-    --maroon-dark: #38070F;
-    --near-black: #17080A;
-    --gold: #D9AE4E;
-    --gold-dim: rgba(217,174,78,0.35);
-    --gold-faint: rgba(217,174,78,0.15);
-    --cream: #FBF5E9;
-    --cream-dim: rgba(251,245,233,0.62);
-    --cream-faint: rgba(251,245,233,0.2);
-  }
-
   *{ box-sizing: border-box; }
 
   html{ scroll-behavior: smooth; }
@@ -29,7 +17,7 @@
     margin: 0;
     background: #E8D9BE;
     font-family: 'Inter', sans-serif;
-    color: var(--near-black);
+    color: #17080A;
     padding: 40px 20px 80px;
   }
 
@@ -38,11 +26,11 @@
     position: relative;
     max-width: 920px;
     margin: 0 auto;
-    background: linear-gradient(160deg, var(--maroon-deep) 0%, var(--maroon-dark) 55%, var(--near-black) 100%);
+    background: linear-gradient(160deg, #5C0F1C 0%, #38070F 55%, #17080A 100%);
     padding: 56px 56px 40px;
     box-shadow:
       0 50px 90px -30px rgba(0,0,0,0.75),
-      0 0 0 1px var(--gold-faint);
+      0 0 0 1px rgba(217,174,78,0.15);
     overflow: hidden;
   }
 
@@ -67,7 +55,7 @@
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 0 2px var(--gold), 0 8px 18px rgba(0,0,0,0.5);
+    box-shadow: 0 0 0 2px #D9AE4E, 0 8px 18px rgba(0,0,0,0.5);
   }
 
   .institute-name{
@@ -75,14 +63,14 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: #D9AE4E;
     line-height: 1.5;
     margin: 0;
   }
 
   .institute-name .college-name{
     display: block;
-    color: var(--cream-dim);
+    color: rgba(251,245,233,0.62);
     font-weight: 500;
     letter-spacing: 0.06em;
     font-size: 11px;
@@ -94,8 +82,8 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid var(--gold-dim);
+    color: #D9AE4E;
+    border: 1px solid rgba(217,174,78,0.35);
     border-radius: 999px;
     padding: 7px 16px;
     white-space: nowrap;
@@ -116,7 +104,7 @@
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: #D9AE4E;
     margin: 0 0 16px;
   }
 
@@ -125,21 +113,21 @@
     font-weight: 600;
     font-size: 46px;
     line-height: 1.05;
-    color: var(--cream);
+    color: #FBF5E9;
     margin: 0 0 14px;
   }
 
   .tagline{
     font-size: 15px;
     line-height: 1.7;
-    color: var(--cream-dim);
+    color: rgba(251,245,233,0.62);
     margin: 0 0 22px;
     max-width: 42ch;
   }
 
   .location-text{
     font-size: 13px;
-    color: var(--cream-dim);
+    color: rgba(251,245,233,0.62);
     margin: 0 0 26px;
     display: flex;
     align-items: center;
@@ -158,7 +146,7 @@
     content: "";
     position: absolute;
     inset: -10px;
-    border: 1px solid var(--gold-dim);
+    border: 1px solid rgba(217,174,78,0.35);
     border-radius: 50%;
   }
 
@@ -167,7 +155,7 @@
     height: 100%;
     border-radius: 50%;
     padding: 6px;
-    background: conic-gradient(from 220deg, var(--gold), rgba(217,174,78,0.25), var(--gold));
+    background: conic-gradient(from 220deg, #D9AE4E, rgba(217,174,78,0.25), #D9AE4E);
   }
 
   .portrait-img{
@@ -176,8 +164,8 @@
     border-radius: 50%;
     object-fit: cover;
     display: block;
-    background: var(--cream);
-    box-shadow: inset 0 0 0 4px var(--maroon-dark);
+    background: #FBF5E9;
+    box-shadow: inset 0 0 0 4px #38070F;
   }
 
   /* ============ SECTION PATTERN ============ */
@@ -192,7 +180,7 @@
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: #D9AE4E;
     margin: 0 0 18px;
   }
 
@@ -218,20 +206,20 @@
 
   .edu-role{
     font-size: 15px;
-    color: var(--cream);
+    color: #FBF5E9;
     font-weight: 600;
   }
   .edu-role span{
     display: block;
     font-size: 12.5px;
     font-weight: 400;
-    color: var(--cream-dim);
+    color: rgba(251,245,233,0.62);
     margin-top: 3px;
   }
   .edu-year{
     font-family: 'Space Mono', monospace;
     font-size: 12px;
-    color: var(--gold);
+    color: #D9AE4E;
   }
 
   /* ============ SKILL STAMPS ============ */
@@ -246,7 +234,7 @@
     font-size: 11px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--cream);
+    color: #FBF5E9;
     padding: 8px 14px;
     border: 1px solid rgba(217,174,78,0.4);
     border-radius: 3px;
@@ -279,7 +267,7 @@
     flex: 1;
     height: 1px;
     max-width: 60px;
-    background: var(--gold-dim);
+    background: rgba(217,174,78,0.35);
   }
 
   .contact-links{
@@ -297,7 +285,7 @@
   }
 
   .contact-links .contact-icon{
-    color: var(--gold);
+    color: #D9AE4E;
     font-size: 15px;
     width: 18px;
     text-align: center;
@@ -305,18 +293,18 @@
 
   .contact-links .contact-value{
     font-size: 15px;
-    color: var(--cream);
-    border-bottom: 1px solid var(--cream-faint);
+    color: #FBF5E9;
+    border-bottom: 1px solid rgba(251,245,233,0.2);
     padding-bottom: 1px;
   }
 
   .contact-links a:hover .contact-icon{
-    color: var(--cream);
+    color: #FBF5E9;
   }
 
   .contact-links a:hover .contact-value{
-    color: var(--gold);
-    border-color: var(--gold);
+    color: #D9AE4E;
+    border-color: #D9AE4E;
   }
 
   /* ============ RESPONSIVE ============ */
