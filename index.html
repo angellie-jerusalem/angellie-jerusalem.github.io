@@ -2,213 +2,121 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Angellie Jerusalem | BSCS Student</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  *{ box-sizing: border-box; }
-
-  body{
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #E8D9BE;
-    font-family: 'Inter', sans-serif;
-    padding: 24px;
-  }
-
-  .card{
-    position: relative;
-    width: 100%;
-    max-width: 660px;
-    background:
-      linear-gradient(135deg, #5C0F1C 0%, #38070F 65%, #17080A 100%);
-    border-radius: 16px;
-    padding: 32px 44px 32px ;
-    overflow: hidden;
-    box-shadow:
-      0 40px 80px -25px rgba(0,0,0,0.75),
-      0 0 0 1px rgba(217,174,78,0.15);
-  }
-
-  .card-header{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 30px;
-  }
-
-  .card-header .institute-brand{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .aspiring-badge{
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #D9AE4E;
-    border: 1px solid rgba(217,174,78,0.35);
-    border-radius: 999px;
-    padding: 6px 14px;
-    white-space: nowrap;
-  }
-
-  .institute-logo{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 0 2px #D9AE4E, 0 8px 18px rgba(0,0,0,0.5);
-  }
-
-  .institute-name{
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #D9AE4E;
-    line-height: 1.5;
-  }
-
-  .institute-name .college-name{
-    display: block;
-    color: rgba(251,245,233,0.62);
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    font-size: 10px;
-    margin-top: 2px;
-  }
-
-  .profile-section{ position: relative; }
-
-  .year-level{
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #D9AE4E;
-    margin: 0 0 14px;
-  }
-
-  .full-name{
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 38px;
-    line-height: 1.1;
-    color: #FBF5E9;
-    margin: 0 0 12px;
-  }
-
-  .about-me{
-    font-size: 13px;
-    color: rgba(251,245,233,0.72);
-    margin: 10px 0 0;
-    line-height: 1.6;
-    max-width: 480px;
-  }
-
-  .gold-divider{
-    height: 1px;
-    background: linear-gradient(90deg, rgba(217,174,78,0.35), rgba(217,174,78,0.02));
-    margin: 22px 0 20px;
-    position: relative;
-  }
-
-  .contact-links{
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    row-gap: 16px;
-    column-gap: 60px;
-  }
-
-  .contact-links a{
-    display: flex;
-    align-items: baseline;
-    gap: 7px;
-    text-decoration: none;
-  }
-
-  .contact-links .contact-label{
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: rgba(251,245,233,0.62);
-  }
-  
-  .contact-links .contact-value{
-    font-size: 14px;
-    color: #FBF5E9;
-    border-bottom: 1px solid rgba(251,245,233,0.2);
-    padding-bottom: 1px;
-  }
-
-  .contact-links a:hover .contact-value{
-    color: #D9AE4E;
-    border-color: #D9AE4E;
-  }
-
-  .connect-heading{
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #D9AE4E;
-    margin: 0 0 14px;
-  }
-
-  @media (max-width: 560px){
-    .card{ padding: 32px 26px 26px; }
-    .full-name{ font-size: 30px; }
-    .contact-links{ grid-template-columns: 1fr; column-gap: 0; row-gap: 14px; }
-    .card-header{ flex-wrap: wrap; }
-    .aspiring-role-badge{ order: 3; margin-top: 8px; }
-    .location-row{ justify-content: flex-start; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <main class="card">
-    <div class="card-header">
-      <div class="institute-brand">
-      <img class="institute-logo" src="754462859_122160079664412687_5157639688529994482_n.jpg" alt="BSCS logo">
-      <p class="institute-name">Institute of Computer Studies
-        <span class="college-name">Tangub City Global College</span>
-      </p>
+  <input type="radio" name="page" id="nav-home" class="page-radio" checked>
+  <input type="radio" name="page" id="nav-about" class="page-radio">
+  <input type="radio" name="page" id="nav-skills" class="page-radio">
+  <input type="radio" name="page" id="nav-projects" class="page-radio">
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <span class="brand-mark">AJ</span>
+        <span class="brand-name-solo">Portfolio</span>
       </div>
-      <span class="aspiring-badge">Aspiring Developer</span>
+      <div class="links">
+        <label for="nav-home">Home</label>
+        <label for="nav-about">About Me</label>
+        <label for="nav-skills">Skills</label>
+        <label for="nav-projects">Projects</label>
+      </div>
     </div>
+  </nav>
 
-    <div class="profile-section">
-      <p class="year-level">BSCS · 3rd Year</p>
-      <h1 class="full-name">Angellie Jerusalem</h1>
-    
-      <p class="about-me">A computer science student still learning the ropes, but always  <br>willing to try, fail and try again until things work.</p>
+  <!-- HOME -->
+  <section class="page page-home">
+    <main class="panel card">
+      <div class="photo-wrap">
+        <img src="profile-photo.png" alt="Angellie Jerusalem">
+      </div>
 
-      <div class="gold-divider"></div>
+      <div class="head">
+        <div class="institute">
+          <img src="754462859_122160079664412687_5157639688529994482_n.jpg" alt="BSCS logo">
+          <p>Institute of Computer Studies<span>Tangub City Global College</span></p>
+        </div>
+        <span class="badge">Aspiring Developer</span>
+      </div>
 
-      <p class="connect-heading">Let's Connect</p>
-      <nav class="contact-links">
-        <a href="mailto:angelliejerusalem.08@gmail.com">
-          <span class="contact-label">Email</span><span class="contact-value">angelliejerusalem.08@gmail.com</span>
-        </a>
-        <a href="https://github.com/angellie-jerusalem" target="_blank" rel="noopener">
-          <span class="contact-label">GitHub</span><span class="contact-value">angellie-jerusalem</span>
-        </a>
-      </nav>
+      <div class="profile">
+        <p class="eyebrow year">BSCS · 3rd Year</p>
+        <h1 class="name">Angellie Jerusalem</h1>
+        <p class="tagline">A computer science student still learning the ropes, but always willing to try, fail and try again until things work.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="eyebrow connect">Let's Connect</p>
+      <div class="contact">
+        <a href="mailto:angelliejerusalem.08@gmail.com"><span>Email</span> angelliejerusalem.08@gmail.com</a>
+        <a href="https://github.com/angellie-jerusalem" target="_blank" rel="noopener"><span>GitHub</span> angellie-jerusalem</a>
+      </div>
+    </main>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="page page-about">
+    <div class="page-content">
+      <p class="label">About</p>
+      <h2 class="title">A little bit about me</h2>
+      <p class="text">Hi! I'm <strong>Angellie Jerusalem</strong>, a 3rd-year <strong>BSCS</strong> student at College. I'm fascinated by how lines of code turn into things people actually use. Right now I'm building my fundamentals one project at a time — I don't always get it right the first try, but I learn something new with every bug I fix and every small win I ship.</p>
     </div>
-  </main>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="page page-skills">
+    <div class="page-content">
+      <p class="label">Skills</p>
+      <h2 class="title">What I'm working with</h2>
+      <div class="skills panel">
+        <h3>Programming Languages</h3>
+        <div class="skill-row"><span>HTML &amp; CSS</span><span>85%</span></div><div class="bar"><span style="width:85%"></span></div>
+        <div class="skill-row"><span>Java</span><span>60%</span></div><div class="bar"><span style="width:60%"></span></div>
+        <div class="skill-row"><span>C</span><span>55%</span></div><div class="bar"><span style="width:55%"></span></div>
+        <div class="skill-row"><span>C#</span><span>50%</span></div><div class="bar"><span style="width:50%"></span></div>
+        <div class="skill-row"><span>Flutter</span><span>45%</span></div><div class="bar"><span style="width:45%"></span></div>
+        <h3>Tools I use</h3>
+        <div class="skill-row"><span>Git &amp; GitHub</span><span>65%</span></div><div class="bar"><span style="width:65%"></span></div>
+        <div class="skill-row"><span>Visual Studio Code</span><span>80%</span></div><div class="bar"><span style="width:80%"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="page page-projects">
+    <div class="page-content">
+      <p class="label">Projects</p>
+      <h2 class="title">Things I've built</h2>
+      <div class="grid">
+        <article class="proj">
+          <p class="eyebrow">Storytelling</p>
+          <h4>StoryHive</h4>
+          <span class="desc">A story-sharing app built with Flutter for writing and reading stories.</span><br>
+          <a href="https://github.com/angellie-jerusalem/storyhive" target="_blank" rel="noopener">GitHub</a>
+        </article>
+        <article class="proj">
+          <p class="eyebrow">Web Development</p>
+          <h4>Personal Portfolio</h4>
+          <span class="desc">My first official portfolio — this site! Built with pure HTML &amp; CSS.</span><br>
+          <a href="https://github.com/angellie-jerusalem/angellie-jerusalem.github.io" target="_blank" rel="noopener">GitHub</a>
+        </article>
+        <article class="proj">
+          <p class="eyebrow">Desktop / CRUD</p>
+          <h4>Coffee CRUD</h4>
+          <span class="desc">A desktop app for managing a coffee menu — add, edit, delete items.</span><br>
+          <a href="https://github.com/angellie-jerusalem/coffee-crud" target="_blank" rel="noopener">GitHub</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
