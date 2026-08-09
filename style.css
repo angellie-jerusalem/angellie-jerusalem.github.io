@@ -10,7 +10,6 @@ body{
   overflow:hidden;
 }
 
-/* small reusable pieces so we stop repeating the same rules everywhere */
 .eyebrow{
   font-size:14px; font-weight:600;
   letter-spacing:.12em; text-transform:uppercase;
@@ -78,7 +77,7 @@ body{
   border-bottom-color:#D9AE4E;
 }
 
-/* ============ PAGE SWITCHING (radio-driven tabs) ============ */
+/* ============ PAGE SWITCHING ============ */
 .page-radio{ position:absolute; opacity:0; pointer-events:none; }
 
 .page{
@@ -232,13 +231,3 @@ body{
 
 .proj a:hover{ color:#FBF5E9; border-color:#FBF5E9; }
 
-/* ============ RESPONSIVE ============ */
-@media (max-width:760px){
-  .grid{ grid-template-columns:1fr; }
-  .navbar{ padding:14px 20px; }
-  .navbar-inner{ flex-direction:column; gap:10px; }
-  .links{ flex-wrap:wrap; justify-content:center; }
-  .photo-wrap{ display:none; }
-  .card{ padding:24px 28px; }
-  .page{ justify-content:center; padding:24px 20px; }
-}
