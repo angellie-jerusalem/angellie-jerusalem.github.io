@@ -15,6 +15,13 @@
   <input type="radio" name="page" id="nav-about" class="page-radio">
   <input type="radio" name="page" id="nav-skills" class="page-radio">
   <input type="radio" name="page" id="nav-projects" class="page-radio">
+  <input type="radio" name="page" id="nav-project-storyhive" class="page-radio">
+  <input type="radio" name="page" id="nav-project-portfolio" class="page-radio">
+  <input type="radio" name="page" id="nav-project-coffeecrud" class="page-radio">
+  <input type="radio" name="page" id="nav-project-regexgame" class="page-radio">
+  <input type="radio" name="page" id="nav-project-sysflow" class="page-radio">
+  <input type="radio" name="page" id="nav-project-productapi" class="page-radio">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
 
   <nav class="navbar">
     <div class="navbar-inner">
@@ -22,11 +29,73 @@
         <span class="brand-mark">AJ</span>
         <span class="brand-name-solo">Portfolio</span>
       </div>
+
+      <label for="nav-toggle" class="nav-toggle-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+
       <div class="links">
         <label for="nav-home">Home</label>
-        <label for="nav-about">About Me</label>
-        <label for="nav-skills">Skills</label>
-        <label for="nav-projects">Projects</label>
+
+        <!-- About Dropdown -->
+        <div class="dropdown-menu">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            About
+            <span class="dropdown-arrow">▼</span>
+          </button>
+          <div class="dropdown-content">
+            <label for="nav-about">
+              <span class="label">Profile</span>
+              <span class="title">About Me</span>
+            </label>
+            <label for="nav-skills">
+              <span class="label">Progress</span>
+              <span class="title">Skills</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Projects Dropdown -->
+        <div class="dropdown-menu">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Projects
+            <span class="dropdown-arrow">▼</span>
+          </button>
+          <div class="dropdown-content">
+            <label for="nav-projects" class="dropdown-featured">
+              <span class="title">View My Work</span>
+              <span class="sub">Browse the full project grid</span>
+            </label>
+            <div class="dropdown-divider"></div>
+            <label for="nav-project-storyhive">
+              <span class="label">Storytelling</span>
+              <span class="title">StoryHive</span>
+            </label>
+            <label for="nav-project-portfolio">
+              <span class="label">Web Development</span>
+              <span class="title">Portfolio Site</span>
+            </label>
+            <label for="nav-project-coffeecrud">
+              <span class="label">Desktop App</span>
+              <span class="title">Coffee CRUD</span>
+            </label>
+            <label for="nav-project-regexgame">
+              <span class="label">Web Game</span>
+              <span class="title">Reg-Ex Game</span>
+            </label>
+            <label for="nav-project-sysflow">
+              <span class="label">Software Design</span>
+              <span class="title">System Flow Diagram</span>
+            </label>
+            <label for="nav-project-productapi">
+              <span class="label">Backend / API</span>
+              <span class="title">Product API</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Contact Button -->
+        <button class="links-button" onclick="openContact()" style="cursor:pointer;">Contact</button>
       </div>
     </div>
   </nav>
@@ -67,7 +136,7 @@
     <div class="page-content">
       <p class="label">About</p>
       <h2 class="title">A little bit about me</h2>
-      <p class="text">Hi! I'm <strong>Angellie Jerusalem</strong>, a 3rd-year <strong>BSCS</strong> student at College. I'm fascinated by how lines of code turn into things people actually use. Right now I'm building my fundamentals one project at a time — I don't always get it right the first try, but I learn something new with every bug I fix and every small win I ship.</p>
+      <p class="text">Hi! I'm <strong>Angellie Jerusalem</strong>, a 3rd-year <strong>BSCS</strong> student at Tangub City Global College. I'm fascinated by how lines of code turn into things people actually use. Right now I'm building my fundamentals one project at a time — I don't always get it right the first try, but I learn something new with every bug I fix and every small win I ship.</p>
     </div>
   </section>
 
@@ -96,27 +165,316 @@
       <p class="label">Projects</p>
       <h2 class="title">Things I've built</h2>
       <div class="grid">
-        <article class="proj">
+        <label class="proj" for="nav-project-storyhive">
           <p class="eyebrow">Storytelling</p>
           <h4>StoryHive</h4>
           <span class="desc">A story-sharing app built with Flutter for writing and reading stories.</span><br>
-          <a href="https://github.com/angellie-jerusalem/storyhive" target="_blank" rel="noopener">GitHub</a>
-        </article>
-        <article class="proj">
+        </label>
+        <label class="proj" for="nav-project-portfolio">
           <p class="eyebrow">Web Development</p>
           <h4>Personal Portfolio</h4>
-          <span class="desc">My first official portfolio — this site! Built with pure HTML &amp; CSS.</span><br>
-          <a href="https://github.com/angellie-jerusalem/angellie-jerusalem.github.io" target="_blank" rel="noopener">GitHub</a>
-        </article>
-        <article class="proj">
+          <span class="desc">My first official portfolio — this site! Built with pure HTML &amp; CSS.</span><br> 
+        </label>
+        <label class="proj" for="nav-project-coffeecrud">
           <p class="eyebrow">Desktop / CRUD</p>
           <h4>Coffee CRUD</h4>
           <span class="desc">A desktop app for managing a coffee menu — add, edit, delete items.</span><br>
-          <a href="https://github.com/angellie-jerusalem/coffee-crud" target="_blank" rel="noopener">GitHub</a>
-        </article>
+        </label>
+        <label class="proj" for="nav-project-regexgame">
+          <p class="eyebrow">Web Game</p>
+          <h4>Reg-Ex Game</h4>
+          <span class="desc">A browser game for practicing regular expressions, built with HTML, CSS &amp; JS.</span><br>
+        </label>
+        <label class="proj" for="nav-project-sysflow">
+          <p class="eyebrow">Software Design</p>
+          <h4>System Flow Diagram</h4>
+          <span class="desc">A system architecture and flow diagram project for software design coursework.</span><br>
+        </label>
+        <label class="proj" for="nav-project-productapi">
+          <p class="eyebrow">Backend / API</p>
+          <h4>Product API</h4>
+          <span class="desc">A REST API for product management with full CRUD operations, built with JavaScript.</span><br>
+        </label>
       </div>
     </div>
   </section>
+
+  <!-- SINGLE PROJECT: STORYHIVE -->
+  <section class="page page-project-storyhive">
+    <div class="page-content project-single-wrap">
+      <div class="project-hero panel">
+        <p class="eyebrow">Storytelling Platform</p>
+        <h1 class="project-title">StoryHive</h1>
+        <p class="project-tagline">A story-sharing app where writers and readers connect. Built with Flutter and Firebase.</p>
+      </div>
+
+      <div class="project-details">
+        <div class="detail-section">
+          <h3>Overview</h3>
+          <p>StoryHive is a mobile-first platform that empowers writers to share their stories and readers to discover new voices. The app features per-user data isolation, author profiles, and a publishing workflow that makes it easy to go from draft to published.</p>
+        </div>
+
+        <div class="detail-section">
+          <h3>Tech Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">Dart</span>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Key Features</h3>
+          <ul class="features-list">
+            <li>Write and publish stories with an intuitive editor</li>
+            <li>Author profiles to showcase your work</li>
+            <li>Secure per-user data isolation</li>
+            <li>Publishing workflow from draft to live</li>
+            <li>Discover and read stories from other writers</li>
+          </ul>
+        </div>
+
+        <div class="project-cta">
+          <a href="https://github.com/angellie-jerusalem/storyhive" target="_blank" rel="noopener" class="cta-button">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINGLE PROJECT: PERSONAL PORTFOLIO -->
+  <section class="page page-project-portfolio">
+    <div class="page-content project-single-wrap">
+      <div class="project-hero panel">
+        <p class="eyebrow">Web Development</p>
+        <h1 class="project-title">Personal Portfolio</h1>
+        <p class="project-tagline">My digital home—a responsive portfolio built entirely with HTML and CSS.</p>
+      </div>
+
+      <div class="project-details">
+        <div class="detail-section">
+          <h3>Overview</h3>
+          <p>This portfolio site is my first official web presence. It showcases my projects, skills, and background as a CS student. Built from scratch with HTML and CSS, it's a clean, responsive design that works across all devices.</p>
+        </div>
+
+        <div class="detail-section">
+          <h3>Tech Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">Responsive Design</span>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Key Features</h3>
+          <ul class="features-list">
+            <li>Fully responsive design for mobile and desktop</li>
+            <li>Multi-page navigation with dropdown menu</li>
+            <li>Project showcase with GitHub links</li>
+            <li>Contact form with email integration</li>
+            <li>Skills section with visual progress bars</li>
+          </ul>
+        </div>
+
+        <div class="project-cta">
+          <a href="https://github.com/angellie-jerusalem/portfolio" target="_blank" rel="noopener" class="cta-button">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINGLE PROJECT: COFFEE CRUD -->
+  <section class="page page-project-coffeecrud">
+    <div class="page-content project-single-wrap">
+      <div class="project-hero panel">
+        <p class="eyebrow">Desktop Application</p>
+        <h1 class="project-title">Coffee CRUD</h1>
+        <p class="project-tagline">A desktop app for managing coffee shop menus and inventory with full CRUD operations.</p>
+      </div>
+
+      <div class="project-details">
+        <div class="detail-section">
+          <h3>Overview</h3>
+          <p>Coffee CRUD is a desktop application designed to simplify coffee shop menu and inventory management. It provides an intuitive interface for adding, editing, viewing, and deleting menu items—making it easy to keep your coffee shop's offerings up to date.</p>
+        </div>
+
+        <div class="detail-section">
+          <h3>Tech Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">C#</span>
+            <span class="tech-tag">Desktop App</span>
+            <span class="tech-tag">CRUD Operations</span>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Key Features</h3>
+          <ul class="features-list">
+            <li>Add new menu items with full details</li>
+            <li>Edit existing items and their descriptions</li>
+            <li>Delete items from the menu</li>
+            <li>View all menu items in an organized list</li>
+            <li>Clean, user-friendly desktop interface</li>
+          </ul>
+        </div>
+
+        <div class="project-cta">
+          <a href="https://github.com/angellie-jerusalem/coffee-crud" target="_blank" rel="noopener" class="cta-button">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINGLE PROJECT: REG-EX GAME -->
+  <section class="page page-project-regexgame">
+    <div class="page-content project-single-wrap">
+      <div class="project-hero panel">
+        <p class="eyebrow">Web Game</p>
+        <h1 class="project-title">Reg-Ex Game</h1>
+        <p class="project-tagline">A browser-based game that makes learning and practicing regular expressions fun.</p>
+      </div>
+
+      <div class="project-details">
+        <div class="detail-section">
+          <h3>Overview</h3>
+          <p>Reg-Ex Game turns regular expression practice into an interactive challenge. Players write and test regex patterns directly in the browser, getting instant feedback as they work through each level.</p>
+        </div>
+
+        <div class="detail-section">
+          <h3>Tech Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Key Features</h3>
+          <ul class="features-list">
+            <li>Interactive regex challenges with instant feedback</li>
+            <li>Progressive levels for building regex skills</li>
+            <li>Clean, distraction-free browser interface</li>
+            <li>Playable directly, no installation needed</li>
+          </ul>
+        </div>
+
+        <div class="project-cta">
+          <a href="https://github.com/angellie-jerusalem/reg-ex-game" target="_blank" rel="noopener" class="cta-button">View on GitHub</a>
+          <a href="https://angellie-jerusalem.github.io/reg-ex-game/" target="_blank" rel="noopener" class="cta-button">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINGLE PROJECT: SYSTEM FLOW DIAGRAM -->
+  <section class="page page-project-sysflow">
+    <div class="page-content project-single-wrap">
+      <div class="project-hero panel">
+        <p class="eyebrow">Software Design</p>
+        <h1 class="project-title">System Flow Diagram</h1>
+        <p class="project-tagline">A system architecture and flow diagram project built for software design coursework.</p>
+      </div>
+
+      <div class="project-details">
+        <div class="detail-section">
+          <h3>Overview</h3>
+          <p>This project presents a system's architecture and process flow as an interactive web page, mapping out how different components and processes connect within the overall design.</p>
+        </div>
+
+        <div class="detail-section">
+          <h3>Tech Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Key Features</h3>
+          <ul class="features-list">
+            <li>Visual mapping of system architecture</li>
+            <li>Clear representation of process flow</li>
+            <li>Built to support software design coursework</li>
+          </ul>
+        </div>
+
+        <div class="project-cta">
+          <a href="https://github.com/angellie-jerusalem/System-Flow-Diagram" target="_blank" rel="noopener" class="cta-button">View on GitHub</a>
+          <a href="https://angellie-jerusalem.github.io/System-Flow-Diagram/" target="_blank" rel="noopener" class="cta-button">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINGLE PROJECT: PRODUCT API -->
+  <section class="page page-project-productapi">
+    <div class="page-content project-single-wrap">
+      <div class="project-hero panel">
+        <p class="eyebrow">Backend / API</p>
+        <h1 class="project-title">Product API</h1>
+        <p class="project-tagline">A REST API for managing products with full CRUD operations.</p>
+      </div>
+
+      <div class="project-details">
+        <div class="detail-section">
+          <h3>Overview</h3>
+          <p>Product API is a backend service for managing a product catalog. It exposes REST endpoints for creating, reading, updating, and deleting product records, making it a solid foundation for any storefront or inventory system.</p>
+        </div>
+
+        <div class="detail-section">
+          <h3>Tech Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">REST API</span>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Key Features</h3>
+          <ul class="features-list">
+            <li>Create new product records</li>
+            <li>Read and list existing products</li>
+            <li>Update product details</li>
+            <li>Delete products from the catalog</li>
+            <li>Full CRUD operations via REST endpoints</li>
+          </ul>
+        </div>
+
+        <div class="project-cta">
+          <a href="https://github.com/angellie-jerusalem/product-api" target="_blank" rel="noopener" class="cta-button">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT MODAL -->
+  <div class="page-contact" id="contactModal">
+    <div class="contact-modal">
+      <button class="close-modal" onclick="closeContact()" aria-label="Close">✕</button>
+      <p class="label">Get in Touch</p>
+      <h2 class="title">Let's talk</h2>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
