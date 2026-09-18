@@ -29,14 +29,12 @@ function handleSubmit(e) {
   closeContact();
 }
 
-// Close modal when the dark overlay (outside the card) is clicked
 document.getElementById('contactModal').addEventListener('click', function (e) {
   if (e.target === this) {
     closeContact();
   }
 });
 
-// Close modal / dropdowns / mobile nav with the Escape key
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
     closeContact();
@@ -66,23 +64,18 @@ dropdownToggles.forEach((toggle) => {
     const menu = this.parentElement;
     const wasActive = menu.classList.contains('active');
 
-    // close every other dropdown first, keeping this one out of the reset
     closeAllDropdowns(menu);
 
-    // classList.toggle() drives the open/close state
-    menu.classList.toggle('active');
     this.setAttribute('aria-expanded', wasActive ? 'false' : 'true');
   });
 });
 
-// Close any open dropdown when clicking outside of it
 document.addEventListener('click', function (e) {
   if (!e.target.closest('.dropdown-menu')) {
     closeAllDropdowns();
   }
 });
 
-// Close dropdown + mobile menu once a project/page link is chosen
 document.querySelectorAll('.dropdown-content label').forEach((item) => {
   item.addEventListener('click', function () {
     closeAllDropdowns();
@@ -90,7 +83,6 @@ document.querySelectorAll('.dropdown-content label').forEach((item) => {
   });
 });
 
-// Close the mobile menu once a top-level nav link is chosen
 document.querySelectorAll('.links > label').forEach((item) => {
   item.addEventListener('click', function () {
     document.getElementById('nav-toggle').checked = false;
