@@ -66,7 +66,13 @@ dropdownToggles.forEach((toggle) => {
 
     closeAllDropdowns(menu);
 
-    this.setAttribute('aria-expanded', wasActive ? 'false' : 'true');
+    // Toggle the active class on the current menu
+    if (!wasActive) {
+      menu.classList.add('active');
+      this.setAttribute('aria-expanded', 'true');
+    } else {
+      this.setAttribute('aria-expanded', 'false');
+    }
   });
 });
 
