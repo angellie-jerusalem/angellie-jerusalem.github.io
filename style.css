@@ -1,9 +1,3 @@
-/* ==========================================================
-   Angellie Jerusalem — Portfolio Stylesheet
-   Sections: Reset, Navbar, Dropdowns, Pages, Home, Skills,
-   Projects, Single Project View, Contact Modal, Responsive
-   ========================================================== */
-
 *{ box-sizing:border-box; margin:0; }
 
 :focus-visible{
@@ -885,7 +879,6 @@ body{
     padding-left:22px;
   }
 
-  
   .name{ font-size:36px; }
   .card{ padding:24px; min-height:auto; }
   .photo-wrap{ position:static; justify-content:center; margin-top:10px; order:2; }
