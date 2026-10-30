@@ -10,6 +10,14 @@
   *{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
 }
 
+#root{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
 body{
   min-height:100vh;
   display:flex;
@@ -71,7 +79,6 @@ body{
 }
 
 /* Hamburger (mobile only) */
-.nav-toggle-input{ position:absolute; opacity:0; pointer-events:none; }
 
 .nav-toggle-btn{
   display:none;
@@ -89,10 +96,6 @@ body{
 
 .nav-toggle-btn:hover{ background:rgba(217,174,78,.08); }
 
-.nav-toggle-input:focus-visible ~ .navbar .nav-toggle-btn{
-  outline:2px solid #D9AE4E;
-  outline-offset:3px;
-}
 
 .nav-toggle-btn span{
   display:block;
@@ -110,8 +113,9 @@ body{
   align-items:center;
 }
 
-.links label,
+.links > a,
 .links-button{
+  text-decoration:none;
   padding:8px 0;
   font-size:14px;
   font-weight:500;
@@ -124,15 +128,12 @@ body{
   font-family:'Inter',sans-serif;
 }
 
-.links label:hover,
+.links > a:hover,
 .links-button:hover{
   color:#F0D48C;
 }
 
-#nav-home:checked ~ .navbar label[for="nav-home"],
-#nav-about:checked ~ .navbar label[for="nav-about"],
-#nav-skills:checked ~ .navbar label[for="nav-skills"],
-#nav-projects:checked ~ .navbar label[for="nav-projects"]{
+.links > a.active{
   color:#FBF5E9;
   border-bottom-color:#D9AE4E;
 }
@@ -222,7 +223,7 @@ body{
   transform:translate(-50%,0) scale(1);
 }
 
-.dropdown-content label{
+.dropdown-content a{
   display:flex;
   flex-direction:column;
   gap:2px;
@@ -236,13 +237,13 @@ body{
   transition:background .18s ease, padding-left .18s ease;
 }
 
-.dropdown-content label:hover,
-.dropdown-content label:focus-visible{
+.dropdown-content a:hover,
+.dropdown-content a:focus-visible{
   background:rgba(217,174,78,.1);
   padding-left:20px;
 }
 
-.dropdown-content label .label{
+.dropdown-content a .dd-label{
   font-size:11px;
   font-weight:600;
   letter-spacing:.08em;
@@ -250,7 +251,7 @@ body{
   color:#D9AE4E;
 }
 
-.dropdown-content label .title{
+.dropdown-content a .dd-title{
   font-size:15px;
   font-weight:600;
   color:#FBF5E9;
@@ -267,7 +268,7 @@ body{
   padding-left:16px !important;
 }
 
-.dropdown-featured .title{
+.dropdown-featured .dd-title{
   font-size:16px;
 }
 
@@ -293,10 +294,9 @@ body{
 }
 
 /* ============ PAGE SWITCHING ============ */
-.page-radio{ position:absolute; opacity:0; pointer-events:none; }
 
 .page{
-  display:none;
+  display:flex;
   flex:1;
   width:100%;
   align-items:center;
@@ -309,16 +309,6 @@ body{
   to{ opacity:1; transform:translateY(0); }
 }
 
-#nav-home:checked ~ .page-home,
-#nav-about:checked ~ .page-about,
-#nav-skills:checked ~ .page-skills,
-#nav-projects:checked ~ .page-projects,
-#nav-project-storyhive:checked ~ .page-project-storyhive,
-#nav-project-portfolio:checked ~ .page-project-portfolio,
-#nav-project-coffeecrud:checked ~ .page-project-coffeecrud,
-#nav-project-regexgame:checked ~ .page-project-regexgame,
-#nav-project-sysflow:checked ~ .page-project-sysflow,
-#nav-project-productapi:checked ~ .page-project-productapi{ display:flex; }
 
 .page-content{ width:100%; }
 
@@ -438,6 +428,7 @@ body{
 
 .proj{
   display:block;
+  text-decoration:none;
   cursor:pointer;
   background:linear-gradient(135deg,#5C0F1C 0%,#38070F 65%,#17080A 100%);
   border-radius:12px;
@@ -812,18 +803,18 @@ body{
 
   /* FIX: #nav-toggle is a sibling of .navbar (not .navbar-inner),
      so the selector has to go through .navbar. */
-  .nav-toggle-input:checked ~ .navbar .links{
+  .navbar.open .links{
     opacity:1;
     visibility:visible;
     transform:translateY(0);
   }
 
-  .nav-toggle-input:checked ~ .navbar .nav-toggle-btn span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
-  .nav-toggle-input:checked ~ .navbar .nav-toggle-btn span:nth-child(2){ opacity:0; }
-  .nav-toggle-input:checked ~ .navbar .nav-toggle-btn span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+  .navbar.open .nav-toggle-btn span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .navbar.open .nav-toggle-btn span:nth-child(2){ opacity:0; }
+  .navbar.open .nav-toggle-btn span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
   /* Top-level items: full width, left aligned, 44px+ touch targets */
-  .links > label,
+  .links > a,
   .links-button,
   .dropdown-toggle{
     display:flex;
@@ -838,17 +829,15 @@ body{
     -webkit-tap-highlight-color:transparent;
   }
 
-  .links > label:hover,
+  .links > a:hover,
   .links-button:hover,
   .dropdown-toggle:hover,
-  .links > label:active,
+  .links > a:active,
   .links-button:active,
   .dropdown-toggle:active{ background:rgba(217,174,78,.08); }
 
-  #nav-home:checked ~ .navbar label[for="nav-home"],
-  #nav-about:checked ~ .navbar label[for="nav-about"],
-  #nav-skills:checked ~ .navbar label[for="nav-skills"],
-  #nav-projects:checked ~ .navbar label[for="nav-projects"]{
+  .links > a.active,
+  .dropdown-toggle.active{
     background:rgba(217,174,78,.1);
   }
 
@@ -885,7 +874,7 @@ body{
     animation:dropdownIn .2s ease;
   }
 
-  .dropdown-content label{ min-height:46px; justify-content:center; }
+  .dropdown-content a{ min-height:46px; justify-content:center; }
 }
 
 @keyframes dropdownIn{
